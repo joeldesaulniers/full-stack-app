@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sandbox-deployment
+  namespace: sandbox-namespace
+  labels:
+    app: sandbox
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sandbox
+  template:
+    metadata:
+      labels:
+        app: sandbox
+    spec:
+      containers:
+        - name: web
+          image: [account-id].dkr.ecr.[region].amazonaws.com/sandbox-namespace/web:[version]
+          ports:
+            - name: http
+              containerPort: 80
