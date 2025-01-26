@@ -23,7 +23,8 @@
     use MongoDB\Driver\Cursor;
 
     // MongoDB connection
-    $client = new MongoDB\Driver\Manager("mongodb://[username]:[password]@[hostname]:27017?authSource=[database_name]");
+    $pw = file_get_contents('/etc/secret-volume/password');
+    $client = new MongoDB\Driver\Manager("mongodb://[username]:".$pw."@[hostname]:27017?authSource=[database_name]");
 
     // Query setup
     $filter = [];
