@@ -21,3 +21,11 @@ spec:
           ports:
             - name: http
               containerPort: 80
+          volumeMounts:
+            - name: secret-volume
+              mountPath: /etc/secret-volume
+              readOnly: true
+      volumes:
+        - name: secret-volume
+          secret:
+            secretName: secret
