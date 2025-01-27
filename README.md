@@ -6,3 +6,4 @@ A full stack web app that I built for learning purposes. Enjoy!
 2) docker build .
 3) Run the container locally or in the cloud.
 4) Connect to the application's front end via HTTP.
+5) Enjoy!
