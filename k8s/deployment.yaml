@@ -17,15 +17,20 @@ spec:
     spec:
       containers:
         - name: web
-          image: [account-id].dkr.ecr.[region].amazonaws.com/sandbox-namespace/web:[version]
+          image: [account-id].dkr.ecr.ca-central-1.amazonaws.com/sandbox-namespace/web:[version]
           ports:
             - name: http
-              containerPort: 80
-          volumeMounts:
-            - name: secret-volume
-              mountPath: /etc/secret-volume
-              readOnly: true
-      volumes:
-        - name: secret-volume
-          secret:
-            secretName: secret
+              containerPort: 8080
+          env:
+            - name: SECRET_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: test-secret
+                  key: secret-key 
+            - name: MONGODB_PASS
+              valueFrom:
+                secretKeyRef:
+                  name: test-secret
+                  key: password 
+            - name: MONGODB_URI
+              value: 'mongodb://[db-user]:$(MONGODB_PASS)@[hostname]:27017/?authSource=[db-name]'
