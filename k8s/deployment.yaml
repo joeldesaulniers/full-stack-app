@@ -22,11 +22,6 @@ spec:
             - name: http
               containerPort: 8080
           env:
-            - name: SECRET_KEY
-              valueFrom:
-                secretKeyRef:
-                  name: test-secret
-                  key: secret-key 
             - name: MONGODB_PASS
               valueFrom:
                 secretKeyRef:
