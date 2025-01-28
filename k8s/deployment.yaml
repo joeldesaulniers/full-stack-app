@@ -29,3 +29,24 @@ spec:
                   key: password 
             - name: MONGODB_URI
               value: 'mongodb://[db-user]:$(MONGODB_PASS)@[hostname]:27017/?authSource=[db-name]'
+      serviceAccountName: pod-service-account
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: pod-service-account
+  namespace: sandbox-namespace
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: pod-role-binding
+  namespace: sandbox-namespace
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: cluster-admin
+subjects:
+- kind: ServiceAccount
+  name: app1serviceaccount
+  namespace: sandbox-namespace
