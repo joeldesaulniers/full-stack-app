@@ -1,7 +1,7 @@
 # full-stack-app
 A full stack web app that I built for learning purposes. Enjoy!
 
-![alt text](/images/architecture.png)
+![alt text](/images/architecture.png=250x250)
 
 # Usage
 1) Git Clone the repository to your development environment.
