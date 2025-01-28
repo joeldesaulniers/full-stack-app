@@ -1,6 +1,8 @@
 # full-stack-app
 A full stack web app that I built for learning purposes. Enjoy!
 
+![alt text](/images/architecture.png)
+
 # Usage
 1) Git Clone the repository to your development environment.
 2) Deploy infrastructure with Terraform.
