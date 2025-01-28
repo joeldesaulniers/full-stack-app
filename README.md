@@ -1,8 +1,7 @@
 # full-stack-app
 A full stack web app that I built for learning purposes. Enjoy!
 
-![](/images/architecture.png=250x250)
- <img src="images/architecture.png=250x250" alt="alt text" width="100" height="100">
+![](/images/architecture.png)
 
 # Usage
 1) Git Clone the repository to your development environment.
