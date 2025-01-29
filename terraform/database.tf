@@ -21,7 +21,7 @@ resource "aws_security_group" "database-sg" {
 
 # EC2 Instance
 resource "aws_instance" "ec2_instance" {
-  ami                    = "ami-0956b8dc6ddc445ec"
+  ami                    = "[ami]"
   subnet_id              = aws_subnet.public_subnet1.id
   instance_type          = "t3.medium"
   vpc_security_group_ids = [aws_security_group.database-sg.id]
