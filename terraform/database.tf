@@ -34,6 +34,8 @@ resource "aws_instance" "ec2_instance" {
   instance_type          = "t3.medium"
   vpc_security_group_ids = [aws_security_group.database-sg.id]
   iam_instance_profile   = aws_iam_instance_profile.profile.name
+# Ensure this key pair name exists in the account
+  key_name               = "[key-name]"
 
   tags = {
     Name = "Database"
