@@ -1,3 +1,11 @@
+# Amazon Machine Image for Database
+variable "ami" {
+  description = "ID of AMI to use for the instance"
+  type        = string
+  default     = "ami-0c614dee691cbbf37"
+}
+
+
 # Security Group for Database
 resource "aws_security_group" "database-sg" {
   name        = "Database Security Group"
@@ -21,7 +29,7 @@ resource "aws_security_group" "database-sg" {
 
 # EC2 Instance
 resource "aws_instance" "ec2_instance" {
-  ami                    = "[ami]"
+  ami                    = var.ami
   subnet_id              = aws_subnet.public_subnet1.id
   instance_type          = "t3.medium"
   vpc_security_group_ids = [aws_security_group.database-sg.id]
