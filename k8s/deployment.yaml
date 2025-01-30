@@ -26,7 +26,12 @@ spec:
               valueFrom:
                 secretKeyRef:
                   name: test-secret
-                  key: password 
+                  key: password
+            - name: SECRET_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: test-secret
+                  key: secret-key
             - name: MONGODB_URI
               value: 'mongodb://[db-user]:$(MONGODB_PASS)@[hostname]:27017/?authSource=[db-name]'
       serviceAccountName: pod-service-account
