@@ -42,6 +42,12 @@ resource "aws_instance" "ec2_instance" {
   }
 }
 
+# Elastic IP
+resource "aws_eip" "ec2_eip" {
+  domain = "vpc"
+  instance = aws_instance.ec2_instance.id
+}
+
 # IAM Role
 resource "aws_iam_role" "role" {
   name = "role"
