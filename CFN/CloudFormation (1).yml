@@ -9,15 +9,6 @@ Parameters:
     Description: Enter the target deployment environment.
 
 Resources:
-  MyVPC:
-    Type: AWS::EC2::VPC
-    Properties:
-      CidrBlock: 10.0.0.0/16
-      Tags:
-        - Key: Environment
-          Value: !Ref EnvironmentName
-
-Resources:
   # IAM Role for Lambda execution
   LambdaExecutionRole:
     Type: AWS::IAM::Role
