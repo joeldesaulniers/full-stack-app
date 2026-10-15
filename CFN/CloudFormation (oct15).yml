@@ -8,9 +8,8 @@ Parameters:
     Description: The environment name for this function
 
   Lambdaname:
-    Type: String
-    Default: joelslambda
-    Description: Enter the name for the Lambda function
+    Type: AWS::SSM::Parameter::Value<String>
+    Default: /lambda-name
 
 Resources:
   # IAM Role for Lambda execution
