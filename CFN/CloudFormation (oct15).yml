@@ -8,7 +8,7 @@ Parameters:
     Description: The environment name for this function
 
   Lambdaname:
-    Type: AWS::SSM::Parameter::Value<String>
+    Type: String
     Default: /lambda-name
 
 Resources:
