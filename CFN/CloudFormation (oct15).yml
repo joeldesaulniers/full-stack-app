@@ -35,13 +35,8 @@ Resources:
       Runtime: python3.11
       Role: !GetAtt LambdaExecutionRole.Arn
       Code:
-        ZipFile: |
-          def handler(event, context):
-              return {
-                  'statusCode': 200,
-                  'body': 'Hello from CloudFormation !'
-              }
-
+        S3Bucket: lambda-app-code-oct-22-2026-joeld 
+        S3Key: index.zip
       Tags:
         - Key: Environment
           Value: !Ref EnvironmentType
