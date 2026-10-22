@@ -9,7 +9,7 @@ Parameters:
 
   Lambdaname:
     Type: String
-    Default: /lambda-name
+    Default: lambda-name
 
 Resources:
   # IAM Role for Lambda execution
